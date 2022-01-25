@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #685175;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="28.0" layoutY="22.0" prefHeight="354.0" prefWidth="545.0" style="-fx-background-color: #7d6a87;">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="156.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="156.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="124.0" minHeight="0.0" prefHeight="23.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox fx:id="POKEMON_1" prefHeight="163.0" prefWidth="180.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
+                     <items>
+                        <TextArea fx:id="POKEMON_1_NOM" prefHeight="38.0" prefWidth="120.0" text="jolteon" />
+                        <TextArea fx:id="POKEMON_1_Niv" prefHeight="38.0" prefWidth="50.0" text="niv 65" />
+                     </items>
+                  </SplitPane>
+                  <ImageView fx:id="POKEMON_1_IMG" fitHeight="73.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                  <ProgressBar fx:id="POKEMON_1_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <TextArea fx:id="POKEMON_1_PUNTOS" prefHeight="36.0" prefWidth="182.0" text="204/204" />
+               </children>
+            </VBox>
+            <VBox fx:id="POKEMON_2" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
+                     <items>
+                        <TextArea fx:id="POKEMON_2_NOM" prefHeight="38.0" prefWidth="120.0" text="charizard" />
+                        <TextArea fx:id="POKEMON_2_Niv" prefHeight="38.0" prefWidth="50.0" text="niv 45" />
+                     </items>
+                  </SplitPane>
+                  <ImageView fx:id="POKEMON_2_IMG" fitHeight="73.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                  <ProgressBar fx:id="POKEMON_2_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <TextArea fx:id="POKEMON_2_PUNTOS" prefHeight="36.0" prefWidth="182.0" text="148/148" />
+               </children>
+            </VBox>
+            <VBox fx:id="POKEMON_3" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+               <children>
+                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
+                     <items>
+                        <TextArea fx:id="POKEMON_3_NOM" prefHeight="38.0" prefWidth="120.0" text="vaporeon" />
+                        <TextArea fx:id="POKEMON_3_Niv" prefHeight="38.0" prefWidth="50.0" text="niv 64" />
+                     </items>
+                  </SplitPane>
+                  <ImageView fx:id="POKEMON_3_IMG" fitHeight="73.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                  <ProgressBar fx:id="POKEMON_3_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <TextArea fx:id="POKEMON_3_PUNTOS" prefHeight="36.0" prefWidth="182.0" text="234/234" />
+               </children>
+            </VBox>
+            <VBox fx:id="POKEMON_4" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
+                     <items>
+                        <TextArea fx:id="POKEMON_4_NOM" prefHeight="38.0" prefWidth="120.0" text="blastoise" />
+                        <TextArea fx:id="POKEMON_4_Niv" prefHeight="38.0" prefWidth="50.0" text="niv 65" />
+                     </items>
+                  </SplitPane>
+                  <ImageView fx:id="POKEMON_4_IMG" fitHeight="73.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                  <ProgressBar fx:id="POKEMON_4_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <TextArea fx:id="POKEMON_4_PUNTOS" prefHeight="36.0" prefWidth="182.0" text="222/222" />
+               </children>
+            </VBox>
+            <VBox fx:id="POKEMON_5" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
+                     <items>
+                        <TextArea fx:id="POKEMON_5_NOM" prefHeight="38.0" prefWidth="120.0" text="miwtwo" />
+                        <TextArea fx:id="POKEMON_5_Niv" prefHeight="38.0" prefWidth="50.0" text="niv 75" />
+                     </items>
+                  </SplitPane>
+                  <ImageView fx:id="POKEMON_5_IMG" fitHeight="73.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                  <ProgressBar fx:id="POKEMON_5_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <TextArea fx:id="POKEMON_5_PUNTOS" prefHeight="36.0" prefWidth="182.0" text="298/298" />
+               </children>
+            </VBox>
+            <VBox fx:id="POKEMON_6" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <SplitPane  dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
+                     <items>
+                        <TextArea fx:id="POKEMON_6_NOM" prefHeight="38.0" prefWidth="120.0" text="butterfree" />
+                        <TextArea fx:id="POKEMON_6_Niv" prefHeight="38.0" prefWidth="50.0" text="niv 54" />
+                     </items>
+                  </SplitPane>
+                  <ImageView fx:id="POKEMON_6_IMG" fitHeight="73.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                  <ProgressBar fx:id="POKEMON_6_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <TextArea fx:id="POKEMON_6_PUNTOS" prefHeight="36.0" prefWidth="182.0" text="160/160" />
+               </children>
+            </VBox>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" text="ELEGIR UN POKEMON" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" text="SALIR" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
