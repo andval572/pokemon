@@ -21,41 +21,41 @@ public class HelloController {
     Pokemon pokemon_6 = new Pokemon("butterfree","Niv 54",new File("src\\main\\resources\\imagenes\\butterfree.gif"),200,"160/160",200);
 
     @FXML
-    TextArea POKEMON_1_NOM;
+    Label POKEMON_1_NOM;
     @FXML
-    TextArea POKEMON_1_Niv;
+    Label POKEMON_1_Niv;
     @FXML
-    TextArea POKEMON_1_PUNTOS;
+    Label POKEMON_1_PUNTOS;
     @FXML
-    TextArea POKEMON_2_NOM;
+    Label POKEMON_2_NOM;
     @FXML
-    TextArea POKEMON_2_Niv;
+    Label POKEMON_2_Niv;
     @FXML
-    TextArea POKEMON_2_PUNTOS;
+    Label POKEMON_2_PUNTOS;
     @FXML
-    TextArea POKEMON_3_NOM;
+    Label POKEMON_3_NOM;
     @FXML
-    TextArea POKEMON_3_Niv;
+    Label POKEMON_3_Niv;
     @FXML
-    TextArea POKEMON_3_PUNTOS;
+    Label POKEMON_3_PUNTOS;
     @FXML
-    TextArea POKEMON_4_NOM;
+    Label POKEMON_4_NOM;
     @FXML
-    TextArea POKEMON_4_Niv;
+    Label POKEMON_4_Niv;
     @FXML
-    TextArea POKEMON_4_PUNTOS;
+    Label POKEMON_4_PUNTOS;
     @FXML
-    TextArea POKEMON_5_NOM;
+    Label POKEMON_5_NOM;
     @FXML
-    TextArea POKEMON_5_Niv;
+    Label POKEMON_5_Niv;
     @FXML
-    TextArea POKEMON_5_PUNTOS;
+    Label POKEMON_5_PUNTOS;
     @FXML
-    TextArea POKEMON_6_NOM;
+    Label POKEMON_6_NOM;
     @FXML
-    TextArea POKEMON_6_Niv;
+    Label POKEMON_6_Niv;
     @FXML
-    TextArea POKEMON_6_PUNTOS;
+    Label POKEMON_6_PUNTOS;
     @FXML
     ImageView POKEMON_1_IMG;
     @FXML
@@ -238,6 +238,7 @@ public class HelloController {
         POKEMON_1_IMG.setStyle("-fx-opacity:0.5");
         contador=1;
     }
+
     @FXML
     private Label welcomeText;
 
