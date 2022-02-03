@@ -1,10 +1,12 @@
 package com.example.demo;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import java.io.File;
 
@@ -12,12 +14,12 @@ import java.io.File;
 public class HelloController {
 
 
-    Pokemon pokemon_1 = new Pokemon("JOLTEON","NIV 65","src\\main\\com\\example\\demo\\imagenes\\jolteon.gif","204/204",200,200);
-    Pokemon pokemon_2 = new Pokemon("CHARIZARD","NIV 45","src\\main\\com\\example\\demo\\imagenes\\charizard(1).gif","148/148",200,200);
-    Pokemon pokemon_3 = new Pokemon("VAPOREON","NIV 54","src\\main\\com\\example\\demo\\imagenes\\vaporeon.gif","148/148",200,200);
-    Pokemon pokemon_4 = new Pokemon("BLASTOISE","NIV 65","src\\main\\com\\example\\demo\\imagenes\\blastoise.gif","222/222",200,200);
-    Pokemon pokemon_5 = new Pokemon("MEWTWO","NIV 75","src\\main\\com\\example\\demo\\imagenes\\mewtwo.gif","298/298",200,200);
-    Pokemon pokemon_6 = new Pokemon("BUTTERFREE","NIV 54","src\\main\\com\\example\\demo\\imagenes\\butterfree.gif","160/160",200,200);
+    Pokemon pokemon_1 = new Pokemon("JOLTEON","NIV 65",new File("src\\main\\java\\com\\example\\demo\\imagenes\\jolteon.gif"),"204/204",200,200);
+    Pokemon pokemon_2 = new Pokemon("CHARIZARD","NIV 45",new File("src\\main\\java\\com\\example\\demo\\imagenes\\charmander1.gif"),"148/148",200,200);
+    Pokemon pokemon_3 = new Pokemon("VAPOREON","NIV 54",new File("src\\main\\java\\com\\example\\demo\\imagenes\\vaporeon.gif"),"148/148",200,200);
+    Pokemon pokemon_4 = new Pokemon("BLASTOISE","NIV 65",new File("src\\main\\java\\com\\example\\demo\\imagenes\\blastoise.gif"),"222/222",200,200);
+    Pokemon pokemon_5 = new Pokemon("MEWTWO","NIV 75",new File("src\\main\\java\\com\\example\\demo\\imagenes\\mewtwo.gif") ,"298/298",200,200);
+    Pokemon pokemon_6 = new Pokemon("BUTTERFREE","NIV 54",new File("src\\main\\java\\com\\example\\demo\\imagenes\\butterfree.gif"),"160/160",200,200);
 
     @FXML
     Label POKEMON_1_NOM;
@@ -91,7 +93,12 @@ public class HelloController {
     VBox POKEMON_5;
     @FXML
     VBox POKEMON_6;
+    @FXML
+    Button BOTON1;
+    @FXML
+    void ELPOKEMON1(MouseEvent event) {
 
+    }
 
     @FXML
 
@@ -116,12 +123,23 @@ public class HelloController {
             POKEMON_6_NIV.setText(pokemon_6.nivelPokemon);
             POKEMON_6_PUNTOS.setText(pokemon_6.puntosPokemon);
 
-            POKEMON_1_IMG.setImage(pokemon_1.fotoPokemon);
-            POKEMON_2_IMG.setImage(pokemon_2.fotoPokemon);
-            POKEMON_3_IMG.setImage(pokemon_3.fotoPokemon);
-            POKEMON_4_IMG.setImage(pokemon_4.fotoPokemon);
-            POKEMON_5_IMG.setImage(pokemon_5.fotoPokemon);
-            POKEMON_6_IMG.setImage(pokemon_6.fotoPokemon);
+            Image image1 = new Image(pokemon_1.fotoPokemon.toURI().toString());
+            POKEMON_1_IMG.setImage(image1);
+
+            Image image2 = new Image(pokemon_2.fotoPokemon.toURI().toString());
+            POKEMON_2_IMG.setImage(image2);
+
+            Image image3 = new Image(pokemon_3.fotoPokemon.toURI().toString());
+            POKEMON_3_IMG.setImage(image3);
+
+            Image image4 = new Image(pokemon_4.fotoPokemon.toURI().toString());
+            POKEMON_4_IMG.setImage(image4);
+
+            Image image5 = new Image(pokemon_5.fotoPokemon.toURI().toString());
+            POKEMON_5_IMG.setImage(image5);
+
+            Image image6 = new Image(pokemon_6.fotoPokemon.toURI().toString());
+            POKEMON_6_IMG.setImage(image6);
 
             POKEMON_1_VIDA.setProgress(pokemon_1.vidaRestantePokemon/pokemon_1.vidaPokemon);
             POKEMON_2_VIDA.setProgress(pokemon_2.vidaRestantePokemon/pokemon_2.vidaPokemon);
@@ -129,15 +147,87 @@ public class HelloController {
             POKEMON_4_VIDA.setProgress(pokemon_4.vidaRestantePokemon/pokemon_4.vidaPokemon);
             POKEMON_5_VIDA.setProgress(pokemon_5.vidaRestantePokemon/pokemon_5.vidaPokemon);
             POKEMON_6_VIDA.setProgress(pokemon_6.vidaRestantePokemon/pokemon_6.vidaPokemon);
+
         }
 
 
     @FXML
-    private Label welcomeText;
+    public void selectPokemon1(){
+        System.out.println("imagen seleccionada");
+        POKEMON_1.setStyle("-fx-background-color: #685175");
+        POKEMON_2.setStyle("-fx-background-color: #7d6a87");
+        POKEMON_3.setStyle("-fx-background-color: #7d6a87");
+        POKEMON_4.setStyle("-fx-background-color: #7d6a87");
+        POKEMON_5.setStyle("-fx-background-color: #7d6a87");
+        POKEMON_6.setStyle("-fx-background-color: #7d6a87");
+        BOTON1.setText("ELEGIR UN POKEMON");
 
+        pokemonSeleccionado = pokemon_1;
+    }
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void selectPokemon2(){
+        System.out.println("imagen seleccionada");
+        boderPokemon2.setStyle("-fx-background-color: #685175");
+        boderPokemon1.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon3.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon4.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon5.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon6.setStyle("-fx-background-color: #7d6a87");
+        boton1.setText("SIGUIENTE");
+        text1.setText("POKEMON ELEGIDO");
+        pokemonSeleccionado = pokemon_2;
+    }
+    @FXML
+    public void selectPokemon3(){
+        System.out.println("imagen seleccionada");
+        boderPokemon3.setStyle("-fx-background-color: #685175");
+        boderPokemon2.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon1.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon4.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon5.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon6.setStyle("-fx-background-color: #7d6a87");
+        boton1.setText("SIGUIENTE");
+        text1.setText("POKEMON ELEGIDO");
+        pokemonSeleccionado = pokemon_3;
+    }
+    @FXML
+    public void selectPokemon4(){
+        System.out.println("imagen seleccionada");
+        boderPokemon4.setStyle("-fx-background-color: #685175");
+        boderPokemon2.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon3.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon1.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon5.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon6.setStyle("-fx-background-color: #7d6a87");
+        boton1.setText("SIGUIENTE");
+        text1.setText("POKEMON ELEGIDO");
+        pokemonSeleccionado = pokemon_4;
+    }
+    @FXML
+    public void selectPokemon5(){
+        System.out.println("imagen seleccionada");
+        boderPokemon5.setStyle("-fx-background-color: #685175");
+        boderPokemon2.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon3.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon4.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon1.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon6.setStyle("-fx-background-color: #7d6a87");
+        boton1.setText("SIGUIENTE");
+        text1.setText("POKEMON ELEGIDO");
+        pokemonSeleccionado = pokemon_5;
+    }
+    @FXML
+    public void selectPokemon6(){
+        System.out.println("imagen seleccionada");
+        boderPokemon6.setStyle("-fx-background-color: #685175");
+        boderPokemon2.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon3.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon4.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon5.setStyle("-fx-background-color: #7d6a87");
+        boderPokemon1.setStyle("-fx-background-color: #7d6a87");
+        boton1.setText("SIGUIENTE");
+        text1.setText("POKEMON ELEGIDO");
+        pokemonSeleccionado = pokemon_6;
     }
 }
 
@@ -145,21 +235,20 @@ class Pokemon {
 
     String nombrePokemon;
     String nivelPokemon;
-    Image fotoPokemon;
+    File fotoPokemon;
     String puntosPokemon;
     double vidaPokemon;
     double vidaRestantePokemon;
 
 
-    public Pokemon(String nombrePokemon,String nivelPokemon,String fotoPokemon,String puntosPokemon,double vidaPokemon,double vidaRestantePokemon ){
+    public Pokemon(String nombrePokemon,String nivelPokemon,File fotoPokemon,String puntosPokemon,double vidaPokemon,double vidaRestantePokemon ){
 
         this.nombrePokemon=nombrePokemon;
         this.nivelPokemon=nivelPokemon;
         this.puntosPokemon=puntosPokemon;
         this.vidaPokemon=vidaPokemon;
         this.vidaRestantePokemon=vidaRestantePokemon;
-        File f = new File(fotoPokemon);
-        Image i = new Image(f.toURI().toString());
-        this.fotoPokemon = i;
+        this.fotoPokemon=fotoPokemon;
+
     }
     }
