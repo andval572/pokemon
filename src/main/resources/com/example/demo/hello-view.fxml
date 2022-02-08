@@ -1,138 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="500.0" maxWidth="750.0" minHeight="500.0" minWidth="750.0" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #685175;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
-   <children>
-      <GridPane layoutX="30.0" layoutY="8.0" prefHeight="479.0" prefWidth="695.0" style="-fx-background-color: #7d6a87;">
+<BorderPane maxHeight="500.0" maxWidth="750.0" minHeight="500.0" minWidth="750.0" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <top>
+      <AnchorPane prefHeight="20.0" prefWidth="600.0" style="-fx-background-color: #685175;" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="32.0" prefWidth="600.0" style="-fx-background-color: #685175;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="BOTON1" layoutX="227.0" layoutY="2.0" mnemonicParsing="false" text="POKEMON ELEGIDO" />
+            <Button fx:id="BOTON2" layoutX="473.0" layoutY="4.0" mnemonicParsing="false" text="SIGUIENTE" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <GridPane prefHeight="429.0" prefWidth="717.0" style="-fx-background-color: #7d6a87;" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="156.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="156.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="124.0" minHeight="0.0" prefHeight="23.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox fx:id="POKEMON_1" alignment="CENTER" onMouseClicked="#selectPokemon1" prefHeight="163.0" prefWidth="180.0">
+            <AnchorPane fx:id="POKEMON_1" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <SplitPane dividerPositions="0.3803418803418803" prefHeight="32.0" prefWidth="182.0">
-                     <items>
-                        <Label fx:id="POKEMON_1_NOM" prefHeight="17.0" prefWidth="116.0" />
-                        <Label fx:id="POKEMON_1_NIV" alignment="CENTER" />
-                     </items>
-                  </SplitPane>
-                  <ImageView fx:id="POKEMON_1_IMG" fitHeight="73.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true">
+                  <Label fx:id="POKEMON_1_NOM" layoutX="27.0" layoutY="6.0" text="Label" textFill="#fffbfb">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_1_NIV" layoutX="189.0" layoutY="6.0" text="Label" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fx:id="POKEMON_1_IMG" fitHeight="140.0" fitWidth="200.0" layoutX="75.0" layoutY="23.0" onMouseClicked="#selectPokemon1" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../java/com/example/demo/imagenes/jolteon.gif" />
+                     </image></ImageView>
+                  <ProgressBar fx:id="POKEMON_1_VIDA" layoutX="25.0" layoutY="163.0" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <Label fx:id="POKEMON_1_PUNTOS" layoutX="27.0" layoutY="181.0" text="Label" textFill="#fffdfd">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_1_TIPO" layoutX="174.0" layoutY="181.0" text="Label" textFill="#f5f5f5">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="POKEMON_2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label fx:id="POKEMON_2_NOM" layoutX="27.0" layoutY="6.0" text="Label" textFill="#fffdfd">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_2_NIV" layoutX="190.0" layoutY="6.0" text="Label" textFill="#fcf9f9">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fx:id="POKEMON_2_IMG" fitHeight="139.0" fitWidth="200.0" layoutX="59.0" layoutY="23.0" onMouseClicked="#selectPokemon2" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../java/com/example/demo/imagenes/charmander1.gif" />
+                     </image></ImageView>
+                  <ProgressBar fx:id="POKEMON_2_VIDA" layoutX="25.0" layoutY="161.0" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <Label fx:id="POKEMON_2_PUNTOS" layoutX="27.0" layoutY="179.0" text="Label" textFill="#fcfcfc">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_2_TIPO" layoutX="197.0" layoutY="179.0" text="Label" textFill="#fcf9f9">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="POKEMON_3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Label fx:id="POKEMON_3_NOM" layoutX="27.0" layoutY="6.0" text="Label" textFill="#f8f7f7">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_3_NIV" layoutX="197.0" layoutY="6.0" text="Label" textFill="#fffefe">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fx:id="POKEMON_3_IMG" fitHeight="138.0" fitWidth="200.0" layoutX="55.0" layoutY="23.0" onMouseClicked="#selectPokemon3" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../java/com/example/demo/imagenes/vaporeon.gif" />
+                     </image></ImageView>
+                  <ProgressBar fx:id="POKEMON_3_VIDA" layoutX="25.0" layoutY="159.0" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <Label fx:id="POKEMON_3_PUNTOS" layoutX="27.0" layoutY="177.0" text="Label" textFill="#f8f7f7">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_3_TIPO" layoutX="197.0" layoutY="177.0" text="Label" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="POKEMON_4" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="POKEMON_4_NOM" layoutX="27.0" layoutY="6.0" text="Label" textFill="#fcfafa">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_4_NIV" layoutX="197.0" layoutY="6.0" text="Label" textFill="#fffefe">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fx:id="POKEMON_4_IMG" fitHeight="151.0" fitWidth="200.0" layoutX="41.0" layoutY="23.0" onMouseClicked="#selectPokemon4" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../java/com/example/demo/imagenes/blastoise.gif" />
-                     </image>
-                  </ImageView>
-                  <ProgressBar fx:id="POKEMON_1_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
-                  <SplitPane dividerPositions="0.5" prefHeight="38.0" prefWidth="103.0">
-                     <items>
-                        <Label fx:id="POKEMON_1_PUNTOS" alignment="CENTER" prefHeight="17.0" prefWidth="87.0" />
-                        <Label text="Label" />
-                     </items>
-                  </SplitPane>
+                     </image></ImageView>
+                  <ProgressBar fx:id="POKEMON_4_VIDA" layoutX="25.0" layoutY="174.0" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <Label fx:id="POKEMON_4_PUNTOS" layoutX="27.0" layoutY="192.0" text="Label" textFill="#f8f5f5">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_4_TIPO" layoutX="197.0" layoutY="192.0" text="Label" textFill="#fffefe">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
                </children>
-            </VBox>
-            <VBox fx:id="POKEMON_2" alignment="CENTER" onMouseClicked="#selectPokemon2" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+            </AnchorPane>
+            <AnchorPane fx:id="POKEMON_5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
-                     <items>
-                        <Label fx:id="POKEMON_2_NOM" prefHeight="17.0" prefWidth="86.0" />
-                        <Label fx:id="POKEMON_2_NIV" alignment="CENTER" />
-                     </items>
-                  </SplitPane>
-                  <ImageView fx:id="POKEMON_2_IMG" fitHeight="73.0" fitWidth="181.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
-                  <ProgressBar fx:id="POKEMON_2_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
-                  <SplitPane dividerPositions="0.5" prefHeight="38.0" prefWidth="103.0">
-                     <items>
-                        <Label fx:id="POKEMON_2_PUNTOS" alignment="CENTER" prefHeight="17.0" prefWidth="87.0" />
-                        <Label text="Label" />
-                     </items>
-                  </SplitPane>
+                  <Label fx:id="POKEMON_5_NOM" layoutX="27.0" layoutY="6.0" text="Label" textFill="#fcfcfc">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_5_NIV" layoutX="197.0" layoutY="6.0" text="Label" textFill="#f5f2f2">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fx:id="POKEMON_5_IMG" fitHeight="191.0" fitWidth="165.0" layoutX="76.0" layoutY="23.0" onMouseClicked="#selectPokemon5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../java/com/example/demo/imagenes/mewtwo.gif" />
+                     </image></ImageView>
+                  <ProgressBar fx:id="POKEMON_5_VIDA" layoutX="25.0" layoutY="175.0" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <Label fx:id="POKEMON_5_PUNTOS" layoutX="27.0" layoutY="193.0" text="Label" textFill="#f5f4f4">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_5_TIPO" layoutX="197.0" layoutY="193.0" text="Label" textFill="#f8f6f6">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
                </children>
-            </VBox>
-            <VBox fx:id="POKEMON_3" alignment="CENTER" onMouseClicked="#selectPokemon3" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+            </AnchorPane>
+            <AnchorPane fx:id="POKEMON_6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
-                     <items>
-                        <Label fx:id="POKEMON_3_NOM" prefHeight="17.0" prefWidth="86.0" />
-                        <Label fx:id="POKEMON_3_NIV" alignment="CENTER" />
-                     </items>
-                  </SplitPane>
-                  <ImageView fx:id="POKEMON_3_IMG" fitHeight="73.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true" />
-                  <ProgressBar fx:id="POKEMON_3_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
-                  <SplitPane dividerPositions="0.5" prefHeight="38.0" prefWidth="103.0">
-                     <items>
-                        <Label fx:id="POKEMON_3_PUNTOS" alignment="CENTER" prefHeight="17.0" prefWidth="87.0" />
-                        <Label text="Label" />
-                     </items>
-                  </SplitPane>
+                  <Label fx:id="POKEMON_6_NOM" layoutX="27.0" layoutY="6.0" text="Label" textFill="#f5f3f3">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_6_NIV" layoutX="197.0" layoutY="6.0" text="Label" textFill="#fcfafa">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fx:id="POKEMON_6_IMG" fitHeight="153.0" fitWidth="200.0" layoutX="44.0" layoutY="23.0" onMouseClicked="#selectPokemon6" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../java/com/example/demo/imagenes/butterfree.gif" />
+                     </image></ImageView>
+                  <ProgressBar fx:id="POKEMON_6_VIDA" layoutX="25.0" layoutY="175.0" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
+                  <Label fx:id="POKEMON_6_PUNTOS" layoutX="27.0" layoutY="193.0" text="Label" textFill="#fcf9f9">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="POKEMON_6_TIPO" layoutX="197.0" layoutY="193.0" text="Label" textFill="#f8f7f7">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
                </children>
-            </VBox>
-            <VBox fx:id="POKEMON_4" alignment="CENTER" onMouseClicked="#selectPokemon4" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
-               <children>
-                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
-                     <items>
-                        <Label fx:id="POKEMON_4_NOM" prefHeight="17.0" prefWidth="86.0" />
-                        <Label fx:id="POKEMON_4_NIV" alignment="CENTER" />
-                     </items>
-                  </SplitPane>
-                  <ImageView fx:id="POKEMON_4_IMG" fitHeight="73.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
-                  <ProgressBar fx:id="POKEMON_4_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
-                  <SplitPane dividerPositions="0.5" prefHeight="38.0" prefWidth="103.0">
-                     <items>
-                        <Label fx:id="POKEMON_4_PUNTOS" alignment="CENTER" prefHeight="17.0" prefWidth="87.0" />
-                        <Label text="Label" />
-                     </items>
-                  </SplitPane>
-               </children>
-            </VBox>
-            <VBox fx:id="POKEMON_5" alignment="CENTER" onMouseClicked="#selectPokemon5" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
-                     <items>
-                        <Label fx:id="POKEMON_5_NOM" prefHeight="17.0" prefWidth="86.0" />
-                        <Label fx:id="POKEMON_5_NIV" alignment="CENTER" />
-                     </items>
-                  </SplitPane>
-                  <ImageView fx:id="POKEMON_5_IMG" fitHeight="73.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true" />
-                  <ProgressBar fx:id="POKEMON_5_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
-                  <SplitPane dividerPositions="0.5" prefHeight="38.0" prefWidth="103.0">
-                     <items>
-                        <Label fx:id="POKEMON_5_PUNTOS" alignment="CENTER" prefHeight="17.0" prefWidth="87.0" />
-                        <Label text="Label" />
-                     </items>
-                  </SplitPane>
-               </children>
-            </VBox>
-            <VBox fx:id="POKEMON_6" alignment="CENTER" onMouseClicked="#selectPokemon6" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <children>
-                  <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="182.0">
-                  <items>
-                     <Label fx:id="POKEMON_6_NOM" prefHeight="17.0" prefWidth="86.0" />
-                     <Label fx:id="POKEMON_6_NIV" alignment="CENTER" />
-                  </items>
-               </SplitPane>
-                  <ImageView fx:id="POKEMON_6_IMG" fitHeight="73.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true" />
-                  <ProgressBar fx:id="POKEMON_6_VIDA" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" />
-                  <SplitPane dividerPositions="0.5" prefHeight="38.0" prefWidth="103.0">
-                     <items>
-                        <Label fx:id="POKEMON_6_PUNTOS" alignment="CENTER" prefHeight="17.0" prefWidth="87.0" />
-                        <Label text="Label" />
-                     </items>
-                  </SplitPane>
-               </children>
-            </VBox>
-            <Button fx:id="BOTON1" mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" text="ELEGIR UN POKEMON" GridPane.rowIndex="2" />
-            <Button fx:id="BOTON2" mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" text="SALIR" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            </AnchorPane>
          </children>
       </GridPane>
-   </children>
-</AnchorPane>
+   </center>
+</BorderPane>

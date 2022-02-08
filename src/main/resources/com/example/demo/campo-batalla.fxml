@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="417.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.CampoBatalla">
+   <children>
+      <ImageView fitHeight="366.0" fitWidth="600.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../java/com/example/demo/imagenes/campo.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="70.0" layoutY="99.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="25.0" layoutY="14.0" text="Label" textFill="#fcf9f9" />
+            <Label layoutX="152.0" layoutY="14.0" text="Label" textFill="#f8f6f6" />
+            <ImageView fitHeight="137.0" fitWidth="200.0" layoutX="51.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/com/example/demo/imagenes/jolteon.gif" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="178.0" text="Label" />
+            <Label layoutX="152.0" layoutY="178.0" text="Label" textFill="#f5f3f3" />
+            <ProgressBar layoutY="163.0" prefHeight="17.0" prefWidth="200.0" progress="1.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="337.0" layoutY="44.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="25.0" layoutY="14.0" text="Label" textFill="#fcf9f9" />
+            <Label layoutX="152.0" layoutY="14.0" text="Label" textFill="#f8f6f6" />
+            <ImageView fitHeight="137.0" fitWidth="200.0" layoutX="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/com/example/demo/imagenes/charmander1.gif" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="178.0" text="Label" textFill="#fcf9f9" />
+            <Label layoutX="152.0" layoutY="178.0" text="Label" textFill="#fcf7f7" />
+            <ProgressBar layoutY="163.0" prefHeight="17.0" prefWidth="200.0" progress="1.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="42.0" layoutY="27.0" prefHeight="17.0" prefWidth="130.0" text="Label" textFill="#f8f6f6">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
