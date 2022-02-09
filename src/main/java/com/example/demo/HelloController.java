@@ -1,13 +1,18 @@
 package com.example.demo;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
 import java.io.File;
+import java.io.IOException;
 
 
 public class HelloController {
@@ -247,6 +252,35 @@ public class HelloController {
         BOTON1.setText("POKEMON ELEGIDO");
         BOTON2.setText("SIGUIENTE");
         pokemonSeleccionado = pokemon_6;
+    }
+    Stage campobatalla;
+
+    @FXML
+    protected void campo_de_batalla() {
+
+        System.out.println("Boton pulsado vamos al campo de Batalla");
+
+        try {
+
+            campobatalla = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("campo-batalla.fxml"));
+
+            AnchorPane root =  loader.load();
+            Scene scene = new Scene(root, 960, 727);
+
+            campobatalla.setScene(scene);
+            campobatalla.show();
+
+            HelloController2 v = loader.getController();
+            v.initialize2(pokemonSeleccionado);
+            //v.enviarDatos(this);
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
 
