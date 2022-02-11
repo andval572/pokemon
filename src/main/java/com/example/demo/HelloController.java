@@ -13,19 +13,20 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class HelloController {
 
     Pokemon pokemonSeleccionado;
 
-
-    Pokemon pokemon_1 = new Pokemon("JOLTEON","NIV 65",new File("src\\main\\java\\com\\example\\demo\\imagenes\\jolteon.gif"),"204/204","ELECTRICO",200,200);
-    Pokemon pokemon_2 = new Pokemon("CHARIZARD","NIV 45",new File("src\\main\\java\\com\\example\\demo\\imagenes\\charmander1.gif"),"148/148","FUEGO",200,200);
-    Pokemon pokemon_3 = new Pokemon("VAPOREON","NIV 54",new File("src\\main\\java\\com\\example\\demo\\imagenes\\vaporeon.gif"),"148/148","AGUA",200,200);
-    Pokemon pokemon_4 = new Pokemon("BLASTOISE","NIV 65",new File("src\\main\\java\\com\\example\\demo\\imagenes\\blastoise.gif"),"222/222","AGUA",200,200);
-    Pokemon pokemon_5 = new Pokemon("MEWTWO","NIV 75",new File("src\\main\\java\\com\\example\\demo\\imagenes\\mewtwo.gif") ,"298/298","SITICO",200,200);
-    Pokemon pokemon_6 = new Pokemon("BUTTERFREE","NIV 54",new File("src\\main\\java\\com\\example\\demo\\imagenes\\butterfree.gif"),"160/160","SITICO",200,200);
+    ArrayList<Pokemon> ListaPokemon = new ArrayList<>();
+    Pokemon pokemon_1 = new Pokemon(0,"JOLTEON","NIV 65",new File("src\\main\\java\\com\\example\\demo\\imagenes\\jolteon.gif"),"204/204","ELECTRICO",200,200);
+    Pokemon pokemon_2 = new Pokemon(1,"CHARIZARD","NIV 45",new File("src\\main\\java\\com\\example\\demo\\imagenes\\charmander1.gif"),"148/148","FUEGO",200,200);
+    Pokemon pokemon_3 = new Pokemon(2,"VAPOREON","NIV 54",new File("src\\main\\java\\com\\example\\demo\\imagenes\\vaporeon.gif"),"148/148","AGUA",200,200);
+    Pokemon pokemon_4 = new Pokemon(3,"BLASTOISE","NIV 65",new File("src\\main\\java\\com\\example\\demo\\imagenes\\blastoise.gif"),"222/222","AGUA",200,200);
+    Pokemon pokemon_5 = new Pokemon(4,"MEWTWO","NIV 75",new File("src\\main\\java\\com\\example\\demo\\imagenes\\mewtwo.gif") ,"298/298","SITICO",200,200);
+    Pokemon pokemon_6 = new Pokemon(5,"BUTTERFREE","NIV 54",new File("src\\main\\java\\com\\example\\demo\\imagenes\\butterfree.gif"),"160/160","SITICO",200,200);
 
     @FXML
     Label POKEMON_1_NOM;
@@ -253,6 +254,7 @@ public class HelloController {
         BOTON2.setText("SIGUIENTE");
         pokemonSeleccionado = pokemon_6;
     }
+
     Stage campobatalla;
 
     @FXML
@@ -273,7 +275,7 @@ public class HelloController {
 
             HelloController2 v = loader.getController();
             v.initialize2(pokemonSeleccionado);
-            //v.enviarDatos(this);
+            v.enviarDatos(this);
 
 
 
@@ -282,21 +284,31 @@ public class HelloController {
         }
 
     }
+
+    public Float calcularVida(Pokemon pokemon){
+        return Float.parseFloat(String.valueOf(pokemon.vidaRestantePokemon / pokemon.vidaPokemon));
+    }
+
+    public void actualizarInterfaz(Pokemon pokemon){
+        ListaPokemon.set(pokemon.getIndex(),pokemon);
+        initialize();
+    }
+
 }
 
 class Pokemon {
-
+    int id;
     String nombrePokemon;
     String nivelPokemon;
     File fotoPokemon;
     String puntosPokemon;
     String tipoPokemon;
-    double vidaPokemon;
-    double vidaRestantePokemon;
+    float vidaPokemon;
+    float vidaRestantePokemon;
 
 
-    public Pokemon(String nombrePokemon,String nivelPokemon,File fotoPokemon,String puntosPokemon,String tipoPokemon,double vidaPokemon,double vidaRestantePokemon ){
-
+    public Pokemon( int id,String nombrePokemon,String nivelPokemon,File fotoPokemon,String puntosPokemon,String tipoPokemon,float vidaPokemon,float vidaRestantePokemon ){
+        this.id=id;
         this.nombrePokemon=nombrePokemon;
         this.nivelPokemon=nivelPokemon;
         this.puntosPokemon=puntosPokemon;
@@ -305,5 +317,8 @@ class Pokemon {
         this.vidaRestantePokemon=vidaRestantePokemon;
         this.fotoPokemon=fotoPokemon;
 
+    }
+    public int getIndex(){
+        return id;
     }
     }
