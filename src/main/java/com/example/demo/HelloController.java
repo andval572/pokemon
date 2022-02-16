@@ -9,6 +9,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -21,7 +22,7 @@ public class HelloController {
     Pokemon pokemonSeleccionado;
 
     ArrayList<Pokemon> ListaPokemon = new ArrayList<>();
-    Pokemon pokemon_1 = new Pokemon(0,"JOLTEON","NIV 65",new File("src\\main\\java\\com\\example\\demo\\imagenes\\jolteon.gif"),"204/204","ELECTRICO",200,200);
+    Pokemon pokemon_1 = new Pokemon(0,"JOLTEON","NIV 65",new File("src\\main\\java\\com\\example\\demo\\imagenes\\jolteon.gif"),"204/204","ELECTRICO",500,500);
     Pokemon pokemon_2 = new Pokemon(1,"CHARIZARD","NIV 45",new File("src\\main\\java\\com\\example\\demo\\imagenes\\charmander1.gif"),"148/148","FUEGO",200,200);
     Pokemon pokemon_3 = new Pokemon(2,"VAPOREON","NIV 54",new File("src\\main\\java\\com\\example\\demo\\imagenes\\vaporeon.gif"),"148/148","AGUA",200,200);
     Pokemon pokemon_4 = new Pokemon(3,"BLASTOISE","NIV 65",new File("src\\main\\java\\com\\example\\demo\\imagenes\\blastoise.gif"),"222/222","AGUA",200,200);
@@ -88,6 +89,18 @@ public class HelloController {
     ImageView POKEMON_5_IMG;
     @FXML
     ImageView POKEMON_6_IMG;
+    @FXML
+    Text PS_POKEMON_1;
+    @FXML
+    Text PS_POKEMON_2;
+    @FXML
+    Text PS_POKEMON_3;
+    @FXML
+    Text PS_POKEMON_4;
+    @FXML
+    Text PS_POKEMON_5;
+    @FXML
+    Text PS_POKEMON_6;
     @FXML
     ProgressBar POKEMON_1_VIDA;
     @FXML
@@ -255,7 +268,7 @@ public class HelloController {
         pokemonSeleccionado = pokemon_6;
     }
 
-    Stage campobatalla;
+    Stage stage2;
 
     @FXML
     protected void campo_de_batalla() {
@@ -264,14 +277,14 @@ public class HelloController {
 
         try {
 
-            campobatalla = new Stage();
+            stage2 = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("campo-batalla.fxml"));
 
             AnchorPane root =  loader.load();
-            Scene scene = new Scene(root, 960, 727);
-
-            campobatalla.setScene(scene);
-            campobatalla.show();
+            Scene scene = new Scene(root, 750, 500);
+            stage2.setTitle("CAMPO DE BATALLA");
+            stage2.setScene(scene);
+            stage2.show();
 
             HelloController2 v = loader.getController();
             v.initialize2(pokemonSeleccionado);

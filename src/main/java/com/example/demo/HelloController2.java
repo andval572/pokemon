@@ -20,12 +20,12 @@ public class HelloController2 {
 
     ArrayList<Pokemon_Oponetes> ListaOponentes = new ArrayList<>();
 
-    Fondo f1 = new Fondo(new File("src\\main\\java\\com\\example\\entregapokemon1\\Imagenes\\campo.jpg"));
+    Fondo f1 = new Fondo(new File("src\\main\\java\\com\\example\\demo\\Imagenes\\campo.jpg"));
 
-    Pokemon_Oponetes pokemonO_1 = new Pokemon_Oponetes("JOLTEON", "NIV 65", new File("src\\main\\java\\com\\example\\demo\\imagenes\\jolteon.gif"), 200, 200);
-    Pokemon_Oponetes pokemonO_2 = new Pokemon_Oponetes("CHARIZARD", "NIV 45", new File("src\\main\\java\\com\\example\\demo\\imagenes\\charmander1.gif"), 200, 200);
-    Pokemon_Oponetes pokemonO_3 = new Pokemon_Oponetes("VAPOREON", "NIV 54", new File("src\\main\\java\\com\\example\\demo\\imagenes\\vaporeon.gif"), 200, 200);
-    Pokemon_Oponetes pokemonO_4 = new Pokemon_Oponetes("BLASTOISE", "NIV 65", new File("src\\main\\java\\com\\example\\demo\\imagenes\\blastoise.gif"), 200, 200);
+    Pokemon_Oponetes pokemonO_1 = new Pokemon_Oponetes("PIKACHU", "NIV 65", new File("src\\main\\java\\com\\example\\demo\\imagenes\\pikachu.gif"), 200, 200);
+    Pokemon_Oponetes pokemonO_2 = new Pokemon_Oponetes("SNORLAX", "NIV 45", new File("src\\main\\java\\com\\example\\demo\\imagenes\\snorlax.gif"), 200, 200);
+    Pokemon_Oponetes pokemonO_3 = new Pokemon_Oponetes("SQUIRTLE", "NIV 54", new File("src\\main\\java\\com\\example\\demo\\imagenes\\squirtle.gif"), 200, 200);
+    Pokemon_Oponetes pokemonO_4 = new Pokemon_Oponetes("BULBASAUR", "NIV 65", new File("src\\main\\java\\com\\example\\demo\\imagenes\\bulbasaur.gif"), 200, 200);
 
 
     @FXML
@@ -76,7 +76,7 @@ public class HelloController2 {
     @FXML
     Text PS_MI_POKEMON;
 
-    @FXML
+
     private HelloController HelloController;
 
 
@@ -151,17 +151,17 @@ public class HelloController2 {
 
         int danio = 20;
 
-        System.out.println("BotonSeguroSeleccionado");
+        System.out.println("Boton Seguro Seleccionado");
 
         pokemonSeleccionado.vidaRestantePokemon -= danio;
         VIDA_MI_POKEMON.setProgress(pokemonSeleccionado.vidaRestantePokemon / pokemonSeleccionado.vidaPokemon);
-        System.out.println("Daño seguro de " + danio);
+        System.out.println("Dano seguro de " + danio);
         //HelloController.actualizarInterfaz(pokemonSeleccionado);
         controlador_vida_mi_pokemon();
 
         oponente.vidaRestantePokemon -= danio;
         VIDA_OPONENTE.setProgress(oponente.vidaRestantePokemon / oponente.vidaPokemon);
-        System.out.println("Daño seguro de " + danio);
+        System.out.println("Dano seguro de " + danio);
         controlador_vida_oponente();
 
     }
@@ -170,20 +170,20 @@ public class HelloController2 {
 
     protected void BT_ARRIESGADO() {
 
-        System.out.println("BotonArriesgadoSeleccionado");
+        System.out.println("Boton Arriesgado Seleccionado");
         Random r = new Random();
 
         int ataque_arriesgado = r.nextInt(15) + 10;
         pokemonSeleccionado.vidaRestantePokemon -= ataque_arriesgado;
         VIDA_MI_POKEMON.setProgress(pokemonSeleccionado.vidaRestantePokemon / pokemonSeleccionado.vidaPokemon);
-        System.out.println("Daño arriesgado1 de " + ataque_arriesgado);
+        System.out.println("Dano arriesgado1 de " + ataque_arriesgado);
         //HelloController.actualizarInterfaz(pokemonSeleccionado);
         controlador_vida_mi_pokemon();
 
         ataque_arriesgado = r.nextInt(15) + 10;
         oponente.vidaRestantePokemon -= ataque_arriesgado;
         VIDA_OPONENTE.setProgress(oponente.vidaRestantePokemon / oponente.vidaPokemon);
-        System.out.println("Daño arriesgado2 de " + ataque_arriesgado);
+        System.out.println("Dano arriesgado2 de " + ataque_arriesgado);
         controlador_vida_oponente();
 
     }
@@ -194,17 +194,17 @@ public class HelloController2 {
         System.out.println("Boton Muy Arriesgado Seleccionado");
         Random r = new Random();
 
-        int rdmMuyArriesgado = r.nextInt(50);
-        pokemonSeleccionado.vidaRestantePokemon -= rdmMuyArriesgado;
+        int MuyArriesgado = r.nextInt(50);
+        pokemonSeleccionado.vidaRestantePokemon -= MuyArriesgado;
         VIDA_MI_POKEMON.setProgress(pokemonSeleccionado.vidaRestantePokemon / pokemonSeleccionado.vidaPokemon);
-        System.out.println("Daño muy arriesgado de " + rdmMuyArriesgado);
+        System.out.println("Dano muy arriesgado de " + MuyArriesgado);
         //HelloController.actualizarInterfaz(pokemonSeleccionado);
         controlador_vida_mi_pokemon();
 
-        rdmMuyArriesgado = r.nextInt(50);
-        oponente.vidaRestantePokemon -= rdmMuyArriesgado;
+        MuyArriesgado = r.nextInt(50);
+        oponente.vidaRestantePokemon -= MuyArriesgado;
         VIDA_OPONENTE.setProgress(oponente.vidaRestantePokemon/ oponente.vidaPokemon);
-        System.out.println("Daño muy arriesgado de " + rdmMuyArriesgado);
+        System.out.println("Dano muy arriesgado de " + MuyArriesgado);
         controlador_vida_oponente();
 
     }
@@ -224,8 +224,7 @@ public class HelloController2 {
 
     @FXML
     protected void cambiotextoOponente() {
-        PS_OPONENTE.setText(String.valueOf(oponente.vidaRestantePokemon));
-    }
+        PS_OPONENTE.setText(String.valueOf(oponente.vidaRestantePokemon));}
 
     @FXML
     protected void cambiotextoOponente1() {
@@ -241,17 +240,18 @@ public class HelloController2 {
         PS_MI_POKEMON.setText("PS");
     }
 
+
     private void controlador_vida_mi_pokemon() {
 
-        if (pokemonSeleccionado.vidaRestantePokemon == 0) {
-            showAlert1(alertaPokemonAliado(pokemonSeleccionado));
+        if (pokemonSeleccionado.vidaRestantePokemon <= 0) {
+            showAlert1(alertaPokemonAliado(oponente));
         }
     }
 
     private void controlador_vida_oponente() {
 
-        if (oponente.vidaRestantePokemon == 0) {
-            showAlert2(alertaPokemonEnemigo(oponente));
+        if (oponente.vidaRestantePokemon <= 0) {
+            showAlert2(alertaPokemonEnemigo(pokemonSeleccionado));
         }
 
     }
@@ -260,35 +260,36 @@ public class HelloController2 {
 
         Optional<ButtonType> resultado = alert.showAndWait();
 
-        if (resultado.get() == ButtonType.OK) {
-            HelloController.campobatalla.close();
-            HelloController.actualizarInterfaz(pokemonSeleccionado);
-        }else{
+        if (resultado.get() == ButtonType.NO) {
             System.exit(0);
+        }else{
+
+            HelloController.stage2.close();
+            HelloController.actualizarInterfaz(pokemonSeleccionado);
         }
     }
     private void showAlert2(Alert alert) {
 
         Optional<ButtonType> resultado = alert.showAndWait();
 
-        if (resultado.get() == ButtonType.OK) {
-
-            HelloController.campobatalla.close();
-            HelloController.actualizarInterfaz(pokemonSeleccionado);
+            if (resultado.get() == ButtonType.NO) {
+                System.exit(0);
 
         }else{
-            System.exit(0);
+
+                HelloController.stage2.close();
+                HelloController.actualizarInterfaz(pokemonSeleccionado);
         }
     }
 
 
-    public Alert alertaPokemonEnemigo(Pokemon_Oponetes oponente) {
+    public Alert alertaPokemonEnemigo(Pokemon pokemonSeleccionado) {
 
         Alert customAlert = new Alert(Alert.AlertType.NONE);
 
         customAlert.setTitle("Pokemon Ganador");
-        customAlert.setContentText("El pokemon ganador es " +oponente.nombrePokemon);
-        customAlert.setGraphic(new ImageView(new Image(oponente.fotoPokemon.toURI().toString())));
+        customAlert.setContentText("El pokemon ganador es " +pokemonSeleccionado.nombrePokemon);
+        customAlert.setGraphic(new ImageView(new Image(pokemonSeleccionado.fotoPokemon.toURI().toString())));
         customAlert.getDialogPane().getButtonTypes().addAll(ButtonType.NEXT, ButtonType.CLOSE);
         showAlert1(customAlert);
 
@@ -296,13 +297,13 @@ public class HelloController2 {
 
     }
 
-    public Alert alertaPokemonAliado(Pokemon pokemonSeleccionado) {
+    public Alert alertaPokemonAliado(Pokemon_Oponetes oponente) {
 
         Alert customAlert = new Alert(Alert.AlertType.NONE);
 
         customAlert.setTitle("Pokemon Ganador");
-        customAlert.setContentText("El pokemon ganador es " +pokemonSeleccionado.nombrePokemon);
-        customAlert.setGraphic(new ImageView(new Image(pokemonSeleccionado.fotoPokemon.toURI().toString())));
+        customAlert.setContentText("tu pokemon ha perdido contra " +oponente.nombrePokemon);
+        customAlert.setGraphic(new ImageView(new Image(oponente.fotoPokemon.toURI().toString())));
         customAlert.getDialogPane().getButtonTypes().addAll(ButtonType.NEXT, ButtonType.CANCEL);
         showAlert2(customAlert);
 

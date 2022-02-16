@@ -7,14 +7,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="BATALLA" prefHeight="417.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController2">
    <children>
-      <ImageView fx:id="FONDO_CAMPO" fitHeight="339.0" fitWidth="600.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../java/com/example/demo/imagenes/campo.jpg" />
-         </image>
-      </ImageView>
+      <ImageView fx:id="FONDO_CAMPO" fitHeight="339.0" fitWidth="600.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane fx:id="LISTA_BOTONES_1" layoutY="336.0" prefHeight="82.0" prefWidth="274.0">
          <children>
             <Button fx:id="ATAQUE_1" layoutX="26.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#BT_SEGURO" text="SEGURO" />
@@ -29,21 +26,32 @@
             <Button fx:id="ATACAR" layoutX="74.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#BT_ATACAR" text="ATACAR" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="MI_POKEMON" layoutX="360.0" layoutY="45.0" prefHeight="195.0" prefWidth="200.0">
+      <AnchorPane fx:id="MI_POKEMON" layoutX="377.0" layoutY="28.0" prefHeight="195.0" prefWidth="200.0">
          <children>
             <Label fx:id="NOM_MI_POKEMON" layoutX="14.0" layoutY="14.0" text="Label" textFill="#fffdfd">
                <font>
                   <Font name="System Bold" size="12.0" />
-               </font></Label>
+               </font>
+            </Label>
             <Label fx:id="NIV_MI_POKEMON" layoutX="148.0" layoutY="14.0" text="Label" textFill="#fcfafa">
                <font>
                   <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <ProgressBar fx:id="VIDA_MI_POKEMON" layoutY="31.0" prefWidth="200.0" progress="1.0" />
-            <ImageView fx:id="IMG_MI_POKEMON" fitHeight="150.0" fitWidth="200.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="VIDA_MI_POKEMON" layoutX="45.0" layoutY="31.0" prefHeight="18.0" prefWidth="155.0" progress="1.0" style="-fx-accent: green;" />
+            <ImageView fx:id="IMG_MI_POKEMON" fitHeight="150.0" fitWidth="200.0" layoutX="51.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/com/example/demo/imagenes/charmander1.gif" />
+               </image>
+            </ImageView>
+            <Text fx:id="PS_MI_POKEMON" fill="#e8d108" layoutX="18.0" layoutY="45.0" onDragExited="#cambiotextomiPokemon1" onMouseDragEntered="#cambiotextomiPokemon" onMouseDragExited="#cambiotextomiPokemon1" onMouseEntered="#cambiotextomiPokemon" onMouseExited="#cambiotextomiPokemon1" strokeType="OUTSIDE" strokeWidth="0.0" text="PS">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="POKEMON_OPONENTE" layoutX="45.0" layoutY="98.0" prefHeight="195.0" prefWidth="200.0">
+      <AnchorPane fx:id="POKEMON_OPONENTE" layoutX="37.0" layoutY="106.0" prefHeight="195.0" prefWidth="200.0">
          <children>
             <Label fx:id="NOM_OPONENTE" layoutX="14.0" layoutY="14.0" text="Label" textFill="#fffdfd">
                <font>
@@ -53,8 +61,16 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <ProgressBar fx:id="VIDA_OPONENTE" layoutY="31.0" prefWidth="200.0" progress="1.0" />
-            <ImageView fx:id="IMG_OPONENTE" fitHeight="150.0" fitWidth="200.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
+            <ProgressBar fx:id="VIDA_OPONENTE" layoutX="36.0" layoutY="31.0" prefHeight="18.0" prefWidth="164.0" progress="1.0" style="-fx-accent: green;" />
+            <ImageView fx:id="IMG_OPONENTE" fitHeight="98.0" fitWidth="82.0" layoutX="59.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/com/example/demo/imagenes/pikachu.gif" />
+               </image></ImageView>
+            <Text fx:id="PS_OPONENTE" fill="#e1e425" layoutX="14.0" layoutY="45.0" onMouseEntered="#cambiotextoOponente" onMouseExited="#cambiotextoOponente1" strokeType="OUTSIDE" strokeWidth="0.0" text="PS">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>
